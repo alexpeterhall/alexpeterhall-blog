@@ -1,0 +1,31 @@
+{
+  "name": "alexpeterhall-blog",
+  "version": "1.0.0",
+  "description": "Personal website and blog of Alex Peter Hall.",
+  "scripts": {
+    "build": "eleventy",
+    "watch": "eleventy --watch",
+    "serve": "eleventy --serve",
+    "start": "eleventy --serve",
+    "debug": "DEBUG=* eleventy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/aroxx/alexpeterhall-blog.git"
+  },
+  "author": {
+    "name": "Alex Hall",
+    "email": "alex@alexpeterhall.com",
+    "url": "https://alexpeterhall.com/"
+  },
+  "homepage": "https://alexpeterhall.com/",
+  "devDependencies": {
+    "@11ty/eleventy": "^0.11.1",
+    "@11ty/eleventy-navigation": "^0.1.6",
+    "@11ty/eleventy-plugin-rss": "^1.1.0",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.6",
+    "luxon": "^1.25.0",
+    "markdown-it": "^8.4.2",
+    "markdown-it-anchor": "^5.2.5"
+  }
+}
