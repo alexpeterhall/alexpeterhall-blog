@@ -1,9 +1,9 @@
 {
   "title": "Alex Peter Hall",
   "url": "https://alexpeterhall.com/",
-  "description": "Personal website and blog of Alex Peter Hall. Web Developer, Automation, and Quality Assurance IT Professional located in Central New Jersey. I write about web development and other things that interest me.",
+  "description": "Personal website and blog of Alex Peter Hall. Web Developer, Automation, and Quality Assurance IT Professional located in Central New Jersey. I write about web development, motorcycles, and other things that interest me.",
   "feed": {
-    "subtitle": "I write about web development and other things that interest me.",
+    "subtitle": "I write about web development, motorcycling, and other things that interest me.",
     "filename": "feed.xml",
     "path": "/feed/feed.xml",
     "id": "https://alexpeterhall.com/"
