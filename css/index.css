@@ -1,15 +1,23 @@
 :root {
-  --darkred: #91091e;
-  --gray: #C0C0C0;
-  --darkgray: #333;
-  --navy: #17050F;
-  --blue: #0d5993;
+  --active: #2188ff;
   --white: #fff;
-  --red: #f05454;
   --lightgray: #dddddd;
-  --darkblue: #222831;
-  --lightblue: #30475e;
-  --bluelink: #4C74B9;
+  --gray: #C0C0C0;
+  --darkgray: #24292e;
+  --blue: #0d5993;
+  --lightblue: #0366d6;
+  --darkblue: #032f62;
+  --lightred: #f97583;
+  --mediumred: #f05454;
+  --red: #d73a49;
+  --darkred: #9e1c23;
+  --lightpurple: #b392f0;
+  --purple: #6f42c1;
+  --darkpurple: #3a1d6e;
+  --orange: #fb8532;
+  --darkorange: #e36209;
+  --twitter: #00acee;
+  --linkedin: #0e76a8;
 }
 
 * {
@@ -21,7 +29,7 @@ body {
   font-size: 1.1em;
   padding: 0px 0px 0px 10px;
   margin: 0;
-  font-family: system-ui, sans-serif;
+  font-family: 'Open Sans', 'Source Sans Pro', system-ui, sans-serif;
   color: var(--darkgray);
   background-color: var(--white);
 }
@@ -46,13 +54,23 @@ p,
 }
 
 a[href] {
-  color: var(--bluelink);
+  color: var(--lightblue);
   text-decoration: underline;
 }
 
 a[href]:hover {
-  color: var(--red);
-  transition: all .3s ease;
+  color: var(--mediumred);
+  transition: all .2s ease;
+}
+
+i.twitter:hover {
+  color: var(--twitter);
+  transition: all .2s ease;
+}
+
+i.linkedin:hover {
+  color: var(--linkedin);
+  transition: all .2s ease;
 }
 
 main {
@@ -64,6 +82,7 @@ main :first-child {
 }
 
 header {
+  font-family: 'Montserrat', sans-serif;
   border-bottom: 1px dashed var(--lightgray);
 }
 
@@ -74,7 +93,9 @@ header:after {
 }
 
 footer {
-  text-align: center;
+  font-size: .8em;
+  text-align: right;
+  padding: 0 0 30px 0;
 }
 
 table {
@@ -89,7 +110,7 @@ table th {
 pre,
 code {
   font-family: Consolas, Menlo, Monaco, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", "Courier New", Courier, monospace;
-  line-height: 1.5;
+  line-height: 1;
 }
 
 pre {
@@ -156,7 +177,7 @@ pre {
   margin: 1rem 0;
   /* 16px /16 */
   font-size: 1.5em;
-  color: var(--navy);
+  color: var(--darkblue);
 }
 
 .home :link:not(:hover) {
@@ -178,7 +199,7 @@ pre {
 
 .nav-item a[href]:not(:hover),
 .home a[href]:not(:hover) {
-  color: var(--navy);
+  color: var(--darkgray);
   text-decoration: none;
 }
 
@@ -242,7 +263,7 @@ pre {
   padding: 2px 4px;
   margin-left: 0.2em;
   color: var(--white);
-  background-color: var(--red);
+  background-color: var(--lightred);
   border-radius: 0.25em;
   text-decoration: none;
 }
@@ -253,9 +274,9 @@ a[href].post-tag {
 }
 
 a[href].post-tag:hover {
-  background-color: var(--darkred);
+  background-color: var(--mediumred);
   text-decoration: underline;
-  transition: all .5s ease;
+  transition: all .2s ease;
 }
 
 /* Warning */
