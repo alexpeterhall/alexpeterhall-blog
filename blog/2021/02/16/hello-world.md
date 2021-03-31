@@ -4,7 +4,6 @@ description: The blog is live
 date: 2021-02-16
 readingTime: 1 minute
 tags: ["website", "hosting", "blogging"]
-layout: layouts/post.njk
 ---
 
 I finally pulled the trigger and made this blog my live website. I decided to go forward with the learning in public/blogging project about a week ago but I was still working on putting the website together. At this point, there clearly isn't much to the site itself. It's bootstrapped with [eleventy-base-blog](https://github.com/11ty/eleventy-base-blog) and I've made a couple of minor tweaks. I'm still learning the static site generator game and figuring out how this site will take shape.

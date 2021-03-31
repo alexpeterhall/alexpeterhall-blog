@@ -4,7 +4,6 @@ description: Another foray into the world of blogging
 date: 2021-02-09
 readingTime: 4 minutes
 tags: blogging
-layout: layouts/post.njk
 ---
 
 This isn't my first attempt at blogging. Many years ago I started (multiple times) writing posts for fun but I never stuck with it. It always fizzled out after a month or two. I suppose this is the fate of most blogs. I think most of the allure for me back then was to play around with the latest blogging software as opposed to actually having something to say.

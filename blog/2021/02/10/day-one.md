@@ -4,7 +4,6 @@ description: First post on the bloggy blog
 date: 2021-02-10
 readingTime: 1 minute
 tags: ["website", "hosting"]
-layout: layouts/post.njk
 ---
 
 It's the first day after I've committed to blogging in a completely non-committal way (haven't made this public yet) so I'll write a quick update. This site is built with [Eleventy](https://www.11ty.dev/), which I've never used before yesterday, so I spent a bit of time learning how it works. I actually bootstrapped this site with [eleventy-base-blog](https://github.com/11ty/eleventy-base-blog) to get started. Out of the box it's using [Nunjucks](https://mozilla.github.io/nunjucks/) as a template engine, which I also have no experience with.

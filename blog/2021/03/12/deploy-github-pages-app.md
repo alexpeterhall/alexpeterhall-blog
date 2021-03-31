@@ -4,7 +4,6 @@ description: Simple steps to deploy your React app for free on GitHub Pages
 date: 2021-03-12
 readingTime: 1 minute
 tags: ["GitHub", "React"]
-layout: layouts/post.njk
 ---
 
 This is easy to do but I've already forgotten how since last time so I'm noting the steps here.
@@ -13,16 +12,22 @@ This is easy to do but I've already forgotten how since last time so I'm noting 
 
 1. Navigate to the root directory of your React App in a terminal and run the line below to install [gh-pages](https://github.com/tschaub/gh-pages) as a development dependency in your React project.
 
-<pre><code>npm install gh-pages --save-dev</code></pre>
+```js
+npm install gh-pages --save-dev
+```
 
 2. Open your package.json file and add a "homepage" property with the URL to the GitHub Page where this app will live. **Note:** The URL is not to the repo itself at GitHub.com but to the GitHub Page at {username}.github.io/{repo}.
 
-<pre><code>"homepage": "https://{username}.github.io/{repo-name}"</code></pre>
+```js
+"homepage": "https://{username}.github.io/{repo-name}"
+```
 
 3. Also in your package.json add the below lines under the `scripts` property.
 
-<pre><code>"predeploy": "npm run build"
-"deploy": "gh-pages -d build"</code></pre>
+```js
+"predeploy": "npm run build"
+"deploy": "gh-pages -d build"
+```
 
 4. Run `npm run deploy` in your terminal.
 

@@ -4,7 +4,6 @@ description: Spaced Repetition with Anki
 date: 2021-02-17
 readingTime: 1 minute
 tags: learning
-layout: layouts/post.njk
 ---
 
 When I got serious about learning JavaScript and [React](https://reactjs.org/) I broke out my finest fountain pen and the 3x5s and started writing flashcards. Physically writing things down is the best way to remember them. Right? And something about putting ink on paper. It just feels good.

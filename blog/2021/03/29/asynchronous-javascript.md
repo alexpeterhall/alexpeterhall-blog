@@ -4,7 +4,6 @@ description: Notes from JavaScript The Definitive Guide
 date: 2021-03-29
 readingTime: 6 minutes
 tags: ["javascript", "promises", "async"]
-layout: layouts/post.njk
 ---
 
 I've been reading a lot about Promises the past few weeks while going through [JavaScript: The Definitive Guide](https://www.amazon.com/JavaScript-Definitive-Most-Used-Programming-Language/dp/1491952024). The [7th Edition](https://davidflanagan.com/2020/05/03/changes-in-the-seventh-edition.html) was released in June 2020 and adds documentation for everything from ES6 up to ES2020. It's hard for a programming book to be more current. I've also read through some online resources and I'll link to a couple of the better ones below.
@@ -36,24 +35,28 @@ Resolved is a tricky state that David Flanagan does an excellent job of explaini
 
 One of the major benefits of Promises is it gives us a better way of executing asynchronous operations in sequence. Promise objects define an instance method called `then()` which is kind of like a callback registration method. Instead of nesting callbacks inside of each other, we can pass our callback in the `then()` method and append it directly to the function invocation that returned the initial Promise. This is why Promise objects are sometimes referred to as "thenable". Because each invocation of `then()` returns a new Promise we can continue to chain `then()` calls together to form a "promise chain" or a sequence of asynchronous operations that will run in order.
 
-<pre><code>PromiseObject(doSomething)
-  .then(doCallback1)
-  .then(doCallback2)</code></pre>
+```js
+PromiseObject(doSomething).then(doCallback1).then(doCallback2);
+```
 
 Part of what makes the promise chain useful is subsequent operations utilize the return value of the previous operation. But, this means if you forget to return a value from your callback function you will pass `undefined` to the next function in line and potentially have a bug that is hard to spot. This problem can pop up even more when using arrow functions if you're not careful about the implicit return syntax. You may think your arrow function is implicitly returning when it's not and returning `undefined`.
 
 The `then()` method takes two arguments. The first argument is a callback function that will be invoked with the returned value of the previous successful (fulfilled) async operation. The second argument is a callback function that will be invoked with the returned value of the previous failed (rejected) async operation. Also known as an error handler.
 
-<pre><code>PromiseObject(doSomething)
+```js
+PromiseObject(doSomething)
   .then(doCallback1, handleDoSomethingFailure)
-  .then(doCallback2, handleDoCallback1Failure)</code></pre>
+  .then(doCallback2, handleDoCallback1Failure);
+```
 
 The problem with this is if `doCallback2()` fails there is no error handling for it. You could use `then()` as only an error handler by passing `null` as the first argument and your error handler function as the second argument.
 
-<pre><code>PromiseObject(doSomething)
+```js
+PromiseObject(doSomething)
   .then(doCallback1, handleDoSomethingFailure)
   .then(doCallback2, handleDoCallback1Failure)
-  .then(null, handleDoCallback2Failure)</code></pre>
+  .then(null, handleDoCallback2Failure);
+```
 
 However, it is uncommon to see `then()` used like this to handle errors because `catch()` is more idiomatic and easier to read.
 
@@ -61,20 +64,24 @@ However, it is uncommon to see `then()` used like this to handle errors because 
 
 As mentioned above, `catch()` is the same as calling `then()` with a null first argument and error handling function as the second argument.
 
-<pre><code>PromiseObject(doSomething)
+```js
+PromiseObject(doSomething)
   .then(doCallback1)
   .then(doCallback2)
-  .catch(handleFailures)</code></pre>
+  .catch(handleFailures);
+```
 
 While commonly used at the end of a Promise chain to handle errors it doesn't have to be. `catch` can be inserted into the middle of a Promise chain to handle a recoverable error and allow subsequent steps in the Promise chain to proceed. If no errors are thrown further up the chain that `catch()` function call will be skipped. If that `catch()` itself throws an error though it will propagate down the Promise chain.
 
-<pre><code>PromiseObject(doSomething)
+```js
+PromiseObject(doSomething)
   .then(doCallback1)
   .then(doCallback2)
   .catch(handleFailures)
   .then(doCallback3)
   .then(doCallback4)
-  .catch(handleMoreFailures)</code></pre>
+  .catch(handleMoreFailures);
+```
 
 ### finally()
 
@@ -84,16 +91,17 @@ While commonly used at the end of a Promise chain to handle errors it doesn't ha
 
 Chaining `then()` calls onto an existing library method (such as `fetch()`) that already returns a Promise is easy. But how do we create our Promise from scratch?
 
-<!-- prettier-ignore -->
-<pre><code>let myNewPromise = new Promise((resolve, reject) => {
+```js
+let myNewPromise = new Promise((resolve, reject) => {
   if (thingsGoWell) {
-    resolve('Hurray!');
+    resolve("Hurray!");
   }
   if (thingsGoOffTheRails) {
-    reject(new Error('The train has derailed.'))
+    reject(new Error("The train has derailed."));
   }
-})
-myNewPromise.then(celebrate());</code></pre>
+});
+myNewPromise.then(celebrate());
+```
 
 ## Additional Methods
 
