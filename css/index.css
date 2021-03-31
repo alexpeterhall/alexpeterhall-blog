@@ -34,47 +34,8 @@ body {
   background-color: var(--white);
 }
 
-p:last-child {
-  margin-bottom: 0;
-}
-
-p,
-ul,
-ol,
-pre,
-code,
-.tmpl-post li,
-img {
-  max-width: 45em;
-  /* max-width: 37.5em; 600px /16 */
-}
-
-p,
-.tmpl-post li {
-  line-height: 1.45;
-}
-
-a[href] {
-  color: var(--lightblue);
-  text-decoration: underline;
-}
-
-a[href]:hover {
-  color: var(--mediumred);
-  transition: all .2s ease;
-}
-
-i.twitter:hover {
-  color: var(--twitter);
-  transition: all .2s ease;
-}
-
-i.linkedin:hover {
-  color: var(--linkedin);
-  transition: all .2s ease;
-}
-
 main {
+  max-width: 45em;
   padding: 1rem;
 }
 
@@ -110,9 +71,39 @@ table th {
 
 code {
   font-family: Consolas, Menlo, Monaco, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", "Courier New", Courier, monospace;
-  background-color: #ffeff0;
+  color: rgb(28, 28, 28);
+  background-color: #d0cece;
   padding: .1rem .3rem .2rem;
   border-radius: .2rem;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+p,
+.tmpl-post li {
+  line-height: 1.45;
+}
+
+a[href] {
+  color: var(--lightblue);
+  text-decoration: underline;
+}
+
+a[href]:hover {
+  color: var(--mediumred);
+  transition: all .2s ease;
+}
+
+i.twitter:hover {
+  color: var(--twitter);
+  transition: all .2s ease;
+}
+
+i.linkedin:hover {
+  color: var(--linkedin);
+  transition: all .2s ease;
 }
 
 .highlight-line {
