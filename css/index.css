@@ -26,8 +26,10 @@
 
 html,
 body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
   font-size: 1.1em;
-  padding: 0px 0px 0px 10px;
   margin: 0;
   font-family: 'Open Sans', 'Source Sans Pro', system-ui, sans-serif;
   color: var(--darkgray);
@@ -35,8 +37,11 @@ body {
 }
 
 main {
+  flex: 1 0 auto;
   max-width: 45em;
-  padding: 1rem;
+  padding: 20px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 main :first-child {
@@ -44,8 +49,14 @@ main :first-child {
 }
 
 header {
+  width: 100%;
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
   font-family: 'Montserrat', sans-serif;
-  border-bottom: 1px dashed var(--lightgray);
+  background-color: var(--darkgray);
+  border-bottom: 5px solid var(--lightred);
 }
 
 header:after {
@@ -55,9 +66,16 @@ header:after {
 }
 
 footer {
+  flex-shrink: 0;
+  width: 100%;
+  height: 50px;
+  padding: 10px 0 0 0;
   font-size: .8em;
-  text-align: right;
-  padding: 0 0 30px 0;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  color: var(--lightgray);
+  background-color: var(--darkgray);
+  border-top: 5px solid var(--lightred);
 }
 
 table {
@@ -159,12 +177,8 @@ img[width][height] {
 
 /* Header */
 .home {
-  padding: 0 1rem;
-  float: left;
-  margin: 1rem 0;
-  /* 16px /16 */
   font-size: 1.5em;
-  color: var(--darkblue);
+  flex-basis: 50%;
 }
 
 .home :link:not(:hover) {
@@ -173,20 +187,17 @@ img[width][height] {
 
 /* Nav */
 .nav {
-  padding: 6px 0px 0px 0px;
-  list-style: none;
-  float: left;
-  margin-left: 1em;
+  display: inline-flex;
+  flex-wrap: wrap;
 }
 
 .nav-item {
-  display: inline-block;
-  margin-right: 1em;
+  margin: .5em;
 }
 
 .nav-item a[href]:not(:hover),
 .home a[href]:not(:hover) {
-  color: var(--darkgray);
+  color: var(--lightgray);
   text-decoration: none;
 }
 
