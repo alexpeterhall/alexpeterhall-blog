@@ -33,7 +33,6 @@ body {
   margin: 0;
   font-family: 'Nunito', -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Ubuntu, roboto, noto, arial, sans-serif;
   color: var(--darkgray);
-  background-color: var(--white);
 }
 
 main {
@@ -50,7 +49,7 @@ main :first-child {
 
 header {
   width: 100%;
-  height: auto;
+  height: 100px;
   display: inline-flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -311,4 +310,11 @@ a[href].direct-link:focus:visited,
 :hover>a[href].direct-link,
 :hover>a[href].direct-link:visited {
   color: #aaa;
+}
+
+@media screen and (max-width: 768px) {
+  header {
+    font-size: 1em;
+    height: 200px;
+  }
 }
