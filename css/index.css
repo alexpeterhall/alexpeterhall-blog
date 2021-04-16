@@ -31,7 +31,7 @@ body {
   flex-direction: column;
   font-size: 1.1em;
   margin: 0;
-  font-family: 'Open Sans', 'Source Sans Pro', system-ui, sans-serif;
+  font-family: 'Nunito', -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Ubuntu, roboto, noto, arial, sans-serif;
   color: var(--darkgray);
   background-color: var(--white);
 }
@@ -50,11 +50,12 @@ main :first-child {
 
 header {
   width: 100%;
+  height: auto;
   display: inline-flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  font-family: 'Montserrat', sans-serif;
+  font-size: 1.2em;
   background-color: var(--darkgray);
   border-bottom: 5px solid var(--lightred);
 }
@@ -72,7 +73,6 @@ footer {
   padding: 10px 0 0 0;
   font-size: .8em;
   text-align: center;
-  font-family: 'Montserrat', sans-serif;
   color: var(--lightgray);
   background-color: var(--darkgray);
   border-top: 5px solid var(--lightred);
@@ -87,8 +87,13 @@ table th {
   padding-right: 1em;
 }
 
+pre {
+  display: flex;
+  overflow: auto;
+}
+
 code {
-  font-family: Consolas, Menlo, Monaco, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", "Courier New", Courier, monospace;
+  font-family: Menlo, Consolas, Monaco, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", "Courier New", Courier, monospace;
   color: rgb(28, 28, 28);
   background-color: #d0cece;
   padding: .1rem .3rem .2rem;
