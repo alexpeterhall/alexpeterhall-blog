@@ -11,9 +11,6 @@
   --mediumred: #f05454;
   --red: #d73a49;
   --darkred: #9e1c23;
-  --lightpurple: #b392f0;
-  --purple: #6f42c1;
-  --darkpurple: #3a1d6e;
   --orange: #fb8532;
   --darkorange: #e36209;
   --twitter: #00acee;
@@ -49,8 +46,8 @@ main :first-child {
 
 header {
   width: 100%;
-  height: 100px;
   display: inline-flex;
+  flex: 0;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
@@ -66,10 +63,9 @@ header:after {
 }
 
 footer {
-  flex-shrink: 0;
   width: 100%;
   height: 50px;
-  padding: 10px 0 0 0;
+  padding: 5px 0 5px 0;
   font-size: .8em;
   text-align: center;
   color: var(--lightgray);
@@ -312,9 +308,14 @@ a[href].direct-link:focus:visited,
   color: #aaa;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 900px) {
   header {
+    flex: 0 0 auto;
     font-size: 1em;
-    height: 200px;
+  }
+
+  .home {
+    position: absolute;
+    left: -999px;
   }
 }
