@@ -116,13 +116,16 @@ Another data structure in Python is called a `tuple`. It is an immutable fixed-s
 this_is_a_tuple = (1, 2, 'three')
 print(this_is_a_tuple[2]) # => three
 this_is_a_tuple[0] = "ONE" # => TypeError: 'tuple' object does not support item assignment
+for item in this_is_a_tuple:
+  print(item)
+# => 1, 2, three
 ```
 
 A dictionary (type == `dict`) is an unordered list of key/value pairs wrapped in curly braces that maintains its element insertion order. It's kind of like a Map in JavaScript. Strings, numbers, and tuples can be used as keys. Any type can be a value. Use standard bracket notation for accessing/writing to properties.
 
 - Looping over a dictionary with for/in iterates over its keys by default.
 - Also has `keys()` and `values()` methods that return a list of the keys and values.
-- `items()` returns a list of key/value tuples.
+- `items()` returns a list of key/value tuples. You can use "tuple unpacking" to assign both values to variables much like destructuring assignment in JavaScript.
 
 ```py
 my_dictionary = {'name': 'Alex', 'age': 100, 1: 'numero_uno'}
@@ -137,6 +140,12 @@ print(my_dictionary.items()) # => dict_items([('name', 'Alex'), ('age', 5), (1, 
 
 for key, value in my_dictionary.items():
   print(f'Key: {key}  |  Value: {value}')
+
+"""
+Key: name  |  Value: Alex
+Key: age  |  Value: 5
+Key: 1  |  Value: numero_uno
+"""
 ```
 
 Python also has the Set type which is very similar to a JavaScript Set, just mentioning it here for completeness.
@@ -163,13 +172,21 @@ for name in list:
 
 if 'Ronnie' in list:
   print('Light weight baby!')
+
+'Alex' in list # => False
 ```
 
-The `range()` function is useful to generate sequences of numbers to loop over.
+The `range()` function is useful to generate sequences of integers. It can take a single parameter to generate a sequence up to but not including that number. It can also take beginning, end, and step size parameters. Because it's a generator function it doesn't store the sequence in memory so you'll need to cast it to a list or tuple to save it.
 
 ```py
 for i in range(10):
-  print(i)
+  print(i) # => 0, 1, 2, 3, 4, 5, 6, 7, 8, 9
+
+range_gen = range(0, 11, 2)
+print(range_gen) # => range(0, 11, 2)
+
+range_list = list(range(0, 11, 2))
+print(range_list) # => [0, 2, 4, 6, 8, 10]
 ```
 
 Python does not have a `switch` statement.
@@ -180,7 +197,7 @@ Python does have `while` loops.
 
 Functions are defined with the `def` keyword followed by the function name and a pair of parentheses and a colon. The parentheses should be empty if the function accepts no arguments or they can contain a named comma-separated parameter list. Optional parameters must have a default value assigned and must appear after any required parameters.
 
-Python will raise an exception if you pass unexpected arguments to a function. This is much different than JavaScript which will allow you to call a function and pass just about anything.
+Python will raise an exception if you pass unexpected arguments to a function or do not pass expected arguments. This is much different than JavaScript which will allow you to call a function and pass just about anything.
 
 ```py
 def hello():
@@ -224,6 +241,13 @@ def change_number():
     global number
     # This will properly update the global variable
     number = 2
+```
+
+When a Python file is run directly, the special variable `__name__` is set to `__main__`. Therefore, it's common to have the boilerplate code below to call a `main()` function when the module is run directly, but not when the module is imported by some other module.
+
+```py
+if __name__ == '__main__':
+    main()
 ```
 
 ## Sources
