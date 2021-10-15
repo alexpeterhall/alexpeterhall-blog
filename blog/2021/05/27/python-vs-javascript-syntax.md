@@ -42,7 +42,9 @@ There are no `++` or `--` operators but you can use `+=` and `-=`.
 
 Dividing with the `/` operator will return a floating-point number. Use the `//` operator to return whole numbers (rounded down).
 
-The JavaScript string and array `slice(beginIndex, endIndex)` method is just `[beginIndex:endIndex]` in Python for strings and lists. If you omit either index it defaults to the beginning or end respectively. Omitting both is an idiomatic way to make a copy of a list in Python.
+The JavaScript string and array `slice(beginIndex, endIndex)` method is just `[beginIndex:endIndex:stepValue]` in Python for strings and lists. If you omit either index it defaults to the beginning or end respectively. Omitting both is an idiomatic way to make a copy of a list in Python.
+
+The third `stepValue` or "stride" parameter specifies how many characters to move forward after retrieving each character. It defaults to 1, or in other words no index is skipped. If you specify a step parameter of 2 you will get every other element. To reverse a string or list you can simply omit the beginning and end index (include the colons) and specify a `stepValue` of -1.
 
 ```py
 my_string = 'Hello World'
@@ -55,6 +57,9 @@ my_list[-2] # => [3]
 
 my_list_copy = my_list[:]
 print(my_list_copy) # => [0, 1, 2, 3, 4]
+
+my_list[0:5:2] # => [0, 2, 4]
+my_list[::-1] # => [4, 3, 2, 1, 0]
 ```
 
 Concatenating strings and other object types with the `+` operator does not perform implicit type conversions like JavaScript. If you want to concatenate a string and a number you'll need to explicitly convert the number to a string first with the `str()` function.
@@ -138,6 +143,7 @@ print(my_dictionary.values()) # => dict_values(['Alex', 5, 'numero_uno'])
 
 print(my_dictionary.items()) # => dict_items([('name', 'Alex'), ('age', 5), (1, 'numero_uno')])
 
+# Tuple Unpacking
 for key, value in my_dictionary.items():
   print(f'Key: {key}  |  Value: {value}')
 
