@@ -90,9 +90,9 @@ pre {
 code {
   font-family: Menlo, Consolas, Monaco, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", "Courier New", Courier, monospace;
   color: rgb(28, 28, 28);
-  background-color: #d0cece;
+  background-color: #e9e4e4;
   padding: .1rem .3rem .2rem;
-  border-radius: .2rem;
+  border-radius: .5rem;
 }
 
 p:last-child {
