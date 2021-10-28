@@ -83,7 +83,7 @@ I manually installed the recommended font first as outlined in [the documentatio
 
 Create a shallow clone of the theme to your **_.oh-my-zsh/custom/themes_** directory.
 
-```git
+```shell
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 ```
 
@@ -138,7 +138,7 @@ set bg=dark
 
 ### Noob-Tip
 
-I'm not going to lie, this tripped me up for a few minutes. You need to run Vim commands (prefixed by `:`) from **_within Vim_**. Not in a shell. Specifically, if you try to `source` your updated **_~/.vimrc_** configuration file you need to enter Vim first. Sourcing from your shell command prompt will not work. Or you can just quit and re-open your terminal and the changes will be applied.
+I'm not going to lie, this tripped me up for a few minutes. You need to run Vim commands (prefixed by `:`) from **within Vim**. Not in a shell. Specifically, if you try to `source` your updated **_~/.vimrc_** configuration file you need to enter Vim first. Sourcing from your shell command prompt will not work. Or you can just quit and re-open your terminal and the changes will be applied.
 
 ```shell
 # Open Vim from your shell
