@@ -23,7 +23,7 @@ The zsh configuration is managed in the **_~/.zshrc_** file in your home directo
 
 This one is easy. Go forth and [download iTerm2](https://iterm2.com/downloads.html) from the internet. Enable [Shell Integration](https://iterm2.com/documentation-shell-integration.html) for some additional features like command autocomplete using `cmd + ;` and command history using `cmd + shift + ;`. Spend some time going through all of the preferences and customizing them.
 
-One cool feature I'll mention here is the "Status Bar" that can be docked on the top or bottom of your terminal and customized to show things like CPU / memory usage, git status, search/replace text-box, etc. Many will consider it useless clutter. But how else are you going to show off your elite hacker skills?
+One cool feature I'll mention here is the "Status Bar" that can be docked on the top or bottom of your terminal and customized to show things like CPU / memory usage, git status, search/replace text-box, etc. Many will consider it useless clutter but I've found it useful to quickly see resource utilization when running lots of containers.
 
 Go to **_Preferences > Profiles > Session > Status bar enabled/Configure Status Bar_** all the way at the bottom. To change where it's docked go to **_Preferences > Appearance > Status bar location_**.
 
