@@ -1,5 +1,10 @@
 {
   "name": "alexpeterhall-blog",
+  "author": {
+    "name": "Alex Hall",
+    "email": "alexpeterhall@gmail.com",
+    "url": "https://alexpeterhall.com/"
+  },
   "version": "1.0.0",
   "description": "Personal website and blog of Alex Peter Hall.",
   "scripts": {
@@ -12,11 +17,6 @@
   "repository": {
     "type": "git",
     "url": "git://github.com/alexpeterhall/alexpeterhall-blog.git"
-  },
-  "author": {
-    "name": "Alex Hall",
-    "email": "alexpeterhall@gmail.com",
-    "url": "https://alexpeterhall.com/"
   },
   "homepage": "https://alexpeterhall.com/",
   "devDependencies": {
