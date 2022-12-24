@@ -37,7 +37,6 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(pluginNavigation);
 
   eleventyConfig.addPassthroughCopy("blog/*/*/*/*/*.jpeg");
-  eleventyConfig.addPassthroughCopy("css");
   eleventyConfig.addPassthroughCopy("img");
 
   eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode);
@@ -107,9 +106,9 @@ module.exports = function (eleventyConfig) {
     breaks: true,
     linkify: true,
   }).use(markdownItAnchor, {
-    permalink: true,
-    permalinkClass: "direct-link",
-    permalinkSymbol: "#",
+    permalink: markdownItAnchor.permalink.headerLink({
+      safariReaderFix: true,
+    }),
   });
   eleventyConfig.setLibrary("md", markdownLibrary);
 

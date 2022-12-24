@@ -288,24 +288,19 @@ a[href].post-tag:hover {
   margin: 0;
 }
 
-/* Direct Links / Markdown Headers */
-.direct-link {
-  font-family: sans-serif;
+/* Markdown Header Anchor Links */
+
+a[href].header-anchor,
+a[href].header-anchor:visited {
+  color: var(--darkgray);
   text-decoration: none;
-  font-style: normal;
-  margin-left: .1em;
 }
 
-a[href].direct-link,
-a[href].direct-link:visited {
-  color: transparent;
-}
-
-a[href].direct-link:focus,
-a[href].direct-link:focus:visited,
-:hover>a[href].direct-link,
-:hover>a[href].direct-link:visited {
-  color: #aaa;
+.header-anchor:hover::after,
+.header-anchor:focus::after {
+  content: '#';
+  color: var(--gray);
+  margin-left: .3em;
 }
 
 @media screen and (max-width: 900px) {
