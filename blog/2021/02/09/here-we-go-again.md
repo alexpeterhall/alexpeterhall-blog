@@ -48,6 +48,6 @@ I'm going to do it anyway. At the end of the day, this is going to be a place fo
 
 - Write about things that I'm working on and that interest me. Right now that is primarily web/software development. I'm sure there will be some motorcycle talk as well.
 - I think I will aim for one post a month at a minimum for a year and see what happens. In the beginning, I will probably end up posting more frequently about whatever is going on just to get myself into the habit of writing. I think the trick will be posting useful things with some frequency without getting paralyzed trying to come up with some profound idea and never writing anything.
-- I'll be bringing [my Twitter](https://twitter.com/Aroxx) back to life after about a 5-year hiatus and posting more frequently there and using that as a platform to engage with others.
+- I'll be bringing [my Twitter](https://twitter.com/alexpeterhall) back to life after about a 5-year hiatus and posting more frequently there and using that as a platform to engage with others.
 - This blog is built with [Eleventy](https://www.11ty.dev/) so I need to learn the ins and outs of that.
 - Have fun!
