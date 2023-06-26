@@ -22,7 +22,7 @@ npm install gh-pages --save-dev
 "homepage": "https://{username}.github.io/{repo-name}"
 ```
 
-3. Also in your package.json add the below lines under the `scripts` property.
+3. Also in your package.json add the below lines under the `scripts` property. Note, the argument sent to `gh-pages -d` should correspond to the output directory of your compiled app. Commonly used names are build, dist, output, etc.
 
 ```js
 "predeploy": "npm run build"
