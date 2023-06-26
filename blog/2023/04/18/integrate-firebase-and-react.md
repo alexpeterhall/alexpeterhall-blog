@@ -39,6 +39,12 @@ const firebaseConfig = {
 };
 ```
 
+If you haven't setup your app yet you will see this. Click the `</>` option for this web project.
+{% image "./blog/2023/04/18/no_apps_in_project.png", "Screenshot of Firebase settings missing app setup", "(max-width: 640px) 100%, 100%", page.url %}
+
+Set a name for your app and the second step "Add Firebase SDK" will generate the required details.
+{% image "./blog/2023/04/18/register_app.png", "Screenshot of Project Settings location in Firebase", "(max-width: 640px) 100%, 100%", page.url %}
+
 Create a `.env.production` file in your project root directory with your Firebase credentials. If you are using Create React App (CRA) you can just prefix the environment variables with `REACT_APP` to easily make them available to your app. If you're not using CRA you may need to take a few more steps to make the environment variables available to your app.
 
 Add this file to `.gitignore` to make them a little harder to find but keep in mind these will get bundled into your shipped application code and be publicly visible to anyone who goes looking for them. This API key is not a secret.

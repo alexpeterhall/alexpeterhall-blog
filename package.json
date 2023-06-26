@@ -11,7 +11,6 @@
     "build": "eleventy",
     "watch": "eleventy --watch",
     "serve": "eleventy --serve",
-    "start": "eleventy --serve",
     "debug": "DEBUG=Eleventy* eleventy"
   },
   "repository": {
