@@ -36,3 +36,16 @@ This creates a new branch in your repository called 'gh-pages'. The live version
 **House Keeping:** Commit and Push these changes to your repo.
 
 **Future Changes:** If you make changes to your app you'll need to run `npm run deploy` to deploy the latest app to the `gh-pages` branch in your repo. Pushing changes directly to your `master` branch will not make those changes live on GitHub Pages.
+
+### **EDIT: 6/27/2023**
+
+I recently deployed an app to Github Pages and received a mysterious 404 when accessing the URL. It immediatly started working after following the below steps. Make sure you complete this step as well when deploying your site.
+
+Navigate to your repository on GitHub. Click the gear icon for the "About" section settings. Note how this says "No description, **website**, or topics provided".
+{% image "./blog/2021/03/12/repo_about_settings.png", "GitHub Repository settings", "(max-width: 640px) 100%, 100%", page.url %}
+
+Check the box next to "Use your GitHub Pages website".
+{% image "./blog/2021/03/12/repo_details_incomplete.png", "Repository details settings incomplete", "(max-width: 640px) 100%, 100%", page.url %}
+
+This will automatically populate the GitHub Pages URL above and "turn on" your website. Save Changes.
+{% image "./blog/2021/03/12/repo_details_complete.png", "Repository details settings complete", "(max-width: 640px) 100%, 100%", page.url %}
