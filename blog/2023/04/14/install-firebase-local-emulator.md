@@ -40,7 +40,7 @@ The Firebase Emulator has a slick UI that runs on your localhost using whatever 
 
 ## Seed and Persist Test Data
 
-You can easily seed test data into your emulated database so you have data to work with while developing locally. You'll need a directory you can point to that contains your test data JSON file. Then you can import this data when you start up the Firebase emulators.
+You can easily seed test data into your emulated database so you have data to work with while developing locally. You'll need a directory you can point to that contains your test data JSON file. Then you can import this data when you start up the Firebase emulators. 
 
 ```bash
 # My import directory is called test_data in this example.
@@ -50,11 +50,11 @@ firebase emulators:start --import=./test_data --export-on-exit
 
 The `--export-on-exit` flag will automatically export the emulator data with any changes you've made to the same directory you used for import when you quit the emulators. You can provide a different directory for export if you prefer as well.
 
-You'll also need to update the database URL you're using to connect to the emulators. The endpoint will now have the same name as your test data file.
+When the emulator starts up it will create a new database named after your import file. I found that the database rules setup in `database.rules.json` only apply to the default database. If you name your import file (and therefore your database) something else, they won't work. So it's easiest to just name your data import file the same as your default database. It will look something like the string after `ns=` in the example below. If anyone knows how to make the database rules apply to other database names please let me know.
 
 ```javascript
 //Ex.
-let config = { databaseURL: 'http://127.0.0.1:9000/?ns=dbseeddata' }
+let config = { databaseURL: 'http://127.0.0.1:9000/?ns=myApp-31aou-default-rtdb' }
 ```
 
 Add a script to your package.json to make this easy to start up.
