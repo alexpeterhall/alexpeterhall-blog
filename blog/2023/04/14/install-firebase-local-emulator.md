@@ -2,7 +2,7 @@
 title: Quickly Install Firebase Local Emulators
 description: How-to get up and running with Firebase Emulators on Mac
 date: 2023-04-14
-readingTime: 1 minute
+readingTime: 2 minutes
 tags: ["firebase", "emulator"]
 ---
 
@@ -37,6 +37,35 @@ Fire (lame pun intended) it up! `firebase emulators:start`
 The Firebase Emulator has a slick UI that runs on your localhost using whatever ports you setup during the initial configuration. Click the link from the above output in your console to open it in a browser.
 
 {% image "./blog/2023/04/14/firebase_UI.png", "Screenshot of the Firebase Emulator UI", "(max-width: 640px) 100%, 100%", page.url %}
+
+## Seed and Persist Test Data
+
+You can easily seed test data into your emulated database so you have data to work with while developing locally. You'll need a directory you can point to that contains your test data JSON file. Then you can import this data when you start up the Firebase emulators.
+
+```bash
+# My import directory is called test_data in this example.
+# You need to provide a path to a directory, not to the data file itself!
+firebase emulators:start --import=./test_data --export-on-exit
+```
+
+The `--export-on-exit` flag will automatically export the emulator data with any changes you've made to the same directory you used for import when you quit the emulators. You can provide a different directory for export if you prefer as well.
+
+You'll also need to update the database URL you're using to connect to the emulators. The endpoint will now have the same name as your test data file.
+
+```javascript
+//Ex.
+let config = { databaseURL: 'http://127.0.0.1:9000/?ns=dbseeddata' }
+```
+
+Add a script to your package.json to make this easy to start up.
+
+```json
+  "scripts": {
+    "firebase": "firebase emulators:start --import=./test_data --export-on-exit",
+  },
+```
+
+Now you can just `npm run firebase` and you're off to the races.
 
 ## Conclusion
 
