@@ -1,6 +1,6 @@
 ---
-title: Firebase with React Component Provider Pattern
-description: Setup your React Context with the Component Provider pattern
+title: Firebase with React Provider Component Pattern
+description: Setup your React Context with the Provider Component pattern
 date: 2023-07-15
 readingTime: 2 minutes
 tags: ["firebase", "react"]
@@ -8,7 +8,7 @@ tags: ["firebase", "react"]
 
 {% image "./blog/2023/07/15/satellite.jpg", "Large satellite dish against landscape at sunrise", "(max-width: 640px) 100%, 100%", page.url %}
 
-I've been making some progress on the excellent [The Joy of React](https://joyofreact.com/) course by Josh W. Comeau and was introduced to the React Component Provider pattern. This post will cover a small refactor to how I setup my Firebase context in my previous post [Add Firebase Realtime Database To Your React App](https://alexpeterhall.com/blog/2023/04/18/integrate-firebase-and-react/).
+I've been making some progress on the excellent [The Joy of React](https://joyofreact.com/) course by Josh W. Comeau and was introduced to the React Provider Component pattern. This post will cover a small refactor to how I setup my Firebase context in my previous post [Add Firebase Realtime Database To Your React App](https://alexpeterhall.com/blog/2023/04/18/integrate-firebase-and-react/).
 
 Previously, I had my Firebase context setup and exported from its own file called `context.tsx`.
 
@@ -49,7 +49,7 @@ function App() {
 
 It was a bit of a mess...
 
-With the Component Provider pattern, I can move all of the Firebase context related code into one file and just wrap my App in that component. The provider component exports the context to be used across the app, instantiates an instance of my Firebase class, and wraps any children with the context provider all in one place instead of across 3 different files.
+With the Provider Component pattern, I can move all of the Firebase context related code into one file and just wrap my App in that component. The provider component exports the context to be used across the app, instantiates an instance of my Firebase class, and wraps any children with the context provider all in one place instead of across 3 different files.
 
 ```typescript
 // New file FirebaseProvider.tsx
@@ -65,7 +65,7 @@ function FirebaseProvider({ children }: { children: ReactNode }) {
 export default FirebaseProvider
 ```
 
-Then, just wrap your app with the Provider component.
+Then, just wrap your app with the provider component.
 
 ```typescript
 // App.tsx
